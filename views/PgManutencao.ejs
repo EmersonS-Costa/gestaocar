@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manutenção</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./js/js.js"></script>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-
+    QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-
+    I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-
+    0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+<body>
+  <div class="container-fluid mt-4" id="contatos">
+
+    <div class="col-12 text-center my-2">
+      <h2 class="display-7 ">Manutencao</h2>
+    </div>
+
+    <div class="row justify-content-center mb-5 p-3">
+      <div class="col-sm-12 col-md-12 col-lg-12 ">
+        <form action="/PgManutencao" method="POST">
+          <div class="form-row">
+
+            <div class="row">
+              <div class="form-group col-sm-2 mb-3">
+                <label for="Data_Manutencao">Data Manutencão</label>
+                <input type="date" class="form-control" id="Data_Manutencao" name="Data_Manutencao"
+                  placeholder="Data_Manutencao">
+              </div>
+
+              <div class="form-group col-sm-2 mb-3">
+                <label for="Placa">Placa</label>
+                <input type="text" class="form-control" id="Placa" name="Placa" placeholder="Placa"
+                  onkeypress="PlacaEnter(event)">
+              </div>
+
+              <div class="form-group col-sm-2 mb-3">
+                <label for="Modelo">Modelo</label>
+                <% modelo.forEach(function(item) { %>
+                  <input type="text" class="form-control" id="Modelo" name="Modelo" placeholder="<%= item.Modelo %>">
+                  <% }); %>
+                    </input>
+              </div>
+
+              <div class="form-group col-sm-2 mb-3">
+                <label for="Km">Km</label>
+                <input type="number" class="form-control" id="Km" name="Km" placeholder="Km">
+              </div>
+
+              <div class="form-group col-sm-4 mb-3">
+                <label for="Oficina">Oficina</label>
+                <select name="Oficina" class="form-control" id="Oficina" required>
+                  <option value="">Oficina</option>
+                    <% oficina.forEach(function(item) { %>
+                      <option value="<%= item.Id %>"> <%= item.Nome %></option>
+                      <% }); %>
+                </select>
+              </div>
+              
+            </div>
+
+            <div class="row">
+              <div class="form-group col-sm-2 mb-3">
+                <label for="CodigoBarra">Código Barra</label>
+                <input type="text" class="form-control" id="CodigoBarra" name="CodigoBarra" placeholder="Código Barra"
+                  onkeypress="CodigoBarraEnter(event)">
+              </div>
+
+              <div class="form-group col-sm-2 mb-3">
+                <label for="Item">Item</label>
+                <% peca.forEach(function(item) { %>
+                  <input type="text" class="form-control" id="Item" name="Item" placeholder="<%= item.Item %>">
+                  <% }); %>
+                    </input>
+              </div>
+
+              <div class="form-group col-sm-4 mb-3">
+                <label for="Descricao">Descricão</label>
+                <% peca.forEach(function(item) { %>
+                  <input type="text" class="form-control" id="Descricao" name="Descricao"
+                    placeholder="<%= item.Descricao %>">
+                  <% }); %>
+                    </input>
+              </div>
+
+              <div class="form-group col-sm-2 mb-3">
+                <label for="Fabricante">Fabricante</label>
+                <% peca.forEach(function(item) { %>
+                  <input type="text" class="form-control" id="Fabricante" name="Fabricante"
+                    placeholder="<%= item.Fabricante%>">
+                  <% }); %>
+                    </input>
+              </div>
+
+              <div class="form-group col-sm-2 mb-3">
+                <label for="Quantidade">Quantidade</label>
+                <input type="number" class="form-control" id="Quantidade" name="Quantidade" placeholder="Quantidade">
+              </div>
+
+            </div>
+          </div>
+
+          <div class="form-row mt-4">
+            <div class="col-sm-12">
+              <button type="submit" class="btn btn-primary">
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-envelope-fill" fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 
+                  4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-
+                  6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z" />
+                </svg>
+                Salvar
+              </button>
+
+              <button data-trigger="focus" type="button" class="btn btn-secondary" data-toggle="popover" title="Ajuda"
+                data-content="Preencha os Campos abaixo e aguarde o retorno em seu email!">
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle-fill" fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412l-
+                2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 
+                1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM8 
+                5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                </svg>
+                Ajuda
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div id="dgvPostos" class="dgvPostos">
+
+      <div id="dgvTitulos" class="dgvTitulos">
+        <div class="M1">Placa</div>
+        <div class="M2">Item</div>
+        <div class="M3">Descrição</div>
+        <div class="M4">Km Atual</div>
+        <div class="M5">Manutenção</div>
+        <div class="M6">Km Restante</div>
+      </div>
+
+      <div id="dgvDados" class="dgvDados">
+        <div class="dgvLinhas">
+                    
+          <div class="M1">
+            <% manutencao.forEach(function(item) { %>
+              <li><%= item.Placa %></li>
+              <% }); %>
+          </div>
+          <div class="M2">
+            <% manutencao.forEach(function(item) { %>
+              <li><%= item.Item %></li>
+              <% }); %>
+          </div>
+          <div class="M3">
+            <% manutencao.forEach(function(item) { %>
+              <li><%= item.Descricao %></li>
+              <% }); %>
+          </div>
+
+          <div class="M5">
+            <% manutencao.forEach(function(item) { %>
+              <li><%= item.KmAtual %></li>
+              <% }); %>
+          </div>
+
+          <div class="M4">
+            <% manutencao.forEach(function(item) { %>
+              <li><%= item.KmManutenção %></li>
+              <% }); %>
+          </div>
+
+          <div class="M6">
+            <% manutencao.forEach(function(item) { %>
+              <li><%= item.Km_Restante %></li>
+              <% }); %>
+          </div>     
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

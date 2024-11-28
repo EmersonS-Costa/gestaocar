@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<!-- Inicio do Cabeçalho -->
+<head> <!-- Inicio do Cabeçalho -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- defini como o navegador deve renderizar a página -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Torna a pagina responsiva -->
+  <title>Gestão Automóvel</title> <!-- Tag que adiciona o titulo na pagina -->
+  <link rel="stylesheet" href="./css/style.css"> <!-- Link conexão ao arquivo CSS de estilos -->
+  <script src="./js/js.js"></script> <!-- Link conexão ao arquivo JavaScript -->
+  <!-- Links conexão ao Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-
+     I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
+    </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384- 
+     0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous">
+    </script>
+</head>
+<!-- Inicio do corpo da página -->
+<body>
+  <!--Barra de navegação(navbar) com titulo e um formulário input com botão para busca-->
+  <nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand">Automotive</a>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+  <!--Barra de navegação(navbar) com elementos de estilo bootstrap, icones SVG-->
+  <nav class="navbar navbar-expand-lg" style="background-color: #78abb0;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/PgHome" target="tela">Home</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria- controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"> </span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <a class="navbar-nav me-auto mb-2 mb-lg-0"> </a>
+        <form class="d-flex" role="search">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item ">
+              <a class="nav-link" href="#" role="button" data-bs- toggle="dropdown" aria-expanded="false">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bell"
+                  viewBox="0 
+                    0 16 16">
+                  <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2M8 1.918l-.797.161A4 4 0 0 0 4 6c0 .628-.134 2.197-.459 
+                      3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4 4 0 0 
+                      0-3.203-3.92zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 
+                      4.005-4.901a1 1 0 1 1 1.99 0A5 5 0 0 1 13 6c0 .88.32 4.2 1.22 6" />
+                </svg>
+                <span class="badge text-bg-secondary"> 0 </span>
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" fill="currentColor"
+                  class="bi bi-file-person" viewBox="0 0 16 16">
+                  <path d="M12 1a1 1 0 0 1 1 1v10.755S12 11 8 11s-5 1.755-5 1.755V2a1 1 0 0 1 1-1zM4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 
+                      2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z" />
+                  <path d="M8 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+                </svg>
+                <% nome.forEach(function(item) { %>
+                  <%= item.Nome %>
+                  <% }); %>
+              </a>
+              <ul class="dropdown-menu"><!--Menu suspenso (dropdown)-->
+                <li><a class="dropdown-item" href="#">Perfil</a></li>
+                <li><a class="dropdown-item" href="#">Segurança</a></li>
+                <li><a class="dropdown-item" href="/logout">Sair</a></li>
+              </ul>
+            </li>
+          </ul>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Menu lateral da pagina, cada tag<a> chamada de ancora representa uma opção no menu, é composto pelo link (href) que direciona para a pagina correspondente e um icone SVG de bootstrap -->
+  <div class="row mt-1 background_base">
+    <div class="col-md-2 col-sm-12 mb-2">
+      <nav class="nav flex-column">
+        <a class="nav-link link-nav text-dark p-3 mb-2 background_houver" href="/PgUsuario" target="tela">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" fill="currentColor" class="bi bi-file-earmark-
+                        person-fill" viewBox="0 0 16 16">
+            <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 
+                0M9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1M11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0m2 5.755V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-.245S4 
+                12 8 12s5 1.755 5 1.755" />
+          </svg>
+          Usuario
+        </a>
+
+        <a class="nav-link link-nav text-dark p-3 mb-2 background_houver" href="/PgAutomovel" target="tela">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" fill="currentColor"
+            class="bi bi-car-front-fill" viewBox="0 0 16 16">
+            <path
+              d="M2.52 3.515A2.5 2.5 0 0 1 4.82 2h6.362c1 0 1.904.596 2.298 1.515l.792 1.848c.075.175.21.319.38.404.5.25.855.715.965 1.262l.335 1.679q.05.242.049.49v.413c0 .814-.39 1.543-1 1.997V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.338c-1.292.048-2.745.088-4 .088s-2.708-.04-4-.088V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.892c-.61-.454-1-1.183-1-1.997v-.413a2.5 2.5 0 0 1 .049-.49l.335-1.68c.11-.546.465-1.012.964-1.261a.8.8 0 0 0 .381-.404l.792-1.848ZM3 10a1 1 0 1 0 0-2 1 1 0 0 0 0 2m10 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2M6 8a1 1 0 0 0 0 2h4a1 1 0 1 0 0-2zM2.906 5.189a.51.51 0 0 0 .497.731c.91-.073 3.35-.17 4.597-.17s3.688.097 4.597.17a.51.51 0 0 0 .497-.731l-.956-1.913A.5.5 0 0 0 11.691 3H4.309a.5.5 0 0 0-.447.276L2.906 5.19Z" />
+          </svg>
+          Automóvel
+        </a>
+
+        <a class="nav-link link-nav text-dark p-3 mb-2 background_houver" href="/PgManutencao" target="tela">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" fill="currentColor" class="bi bi-tools"
+            viewBox="0 0 16 16">
+            <path
+              d="M1 0 0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.27 3.27a.997.997 0 0 0 1.414 0l1.586-1.586a.997.997 0 0 0 0-1.414l-3.27-3.27a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3q0-.405-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814zm9.646 10.646a.5.5 0 0 1 .708 0l2.914 2.915a.5.5 0 0 1-.707.707l-2.915-2.914a.5.5 0 0 1 0-.708M3 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026z" />
+          </svg>
+          Manutenção
+        </a>
+
+        <a class="nav-link link-nav text-dark p-3 mb-2 background_houver" href="/PgCombustivel" target="tela">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" fill="currentColor"
+            class="bi bi-fuel-pump-fill" viewBox="0 0 16 16">
+            <path
+              d="M1 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1 2 2v.5a.5.5 0 0 0 1 0V8h-.5a.5.5 0 0 1-.5-.5V4.375a.5.5 0 0 1 .5-.5h1.495c-.011-.476-.053-.894-.201-1.222a.97.97 0 0 0-.394-.458c-.184-.11-.464-.195-.9-.195a.5.5 0 0 1 0-1q.846-.002 1.412.336c.383.228.634.551.794.907.295.655.294 1.465.294 2.081V7.5a.5.5 0 0 1-.5.5H15v4.5a1.5 1.5 0 0 1-3 0V12a1 1 0 0 0-1-1v4h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1zm2.5 0a.5.5 0 0 0-.5.5v5a.5.5 0 0 0 .5.5h5a.5.5 0 0 0 .5-.5v-5a.5.5 0 0 0-.5-.5z" />
+          </svg>
+          Combustível
+        </a>
+
+        <a class="nav-link link-nav text-dark p-3 mb-2 background_houver" href="/PgHistorico" target="tela">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25PX" height="25px" fill="currentColor"
+            class="bi bi-file-earmark-bar-graph-fill" viewBox="0 0 16 16">
+            <path
+              d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0M9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1m.5 10v-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5m-2.5.5a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5zm-3 0a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5z" />
+          </svg>
+          Histórico
+        </a>
+
+        <a class="nav-link link-nav text-dark p-3 mb-2 background_houver" href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" fill="currentColor"
+            class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+            <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
+          </svg>
+          Localização
+        </a>
+
+        <a class="nav-link link-nav text-dark p-3 mb-2 background_houver" href="/PgTransferencia" target="tela">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" fill="currentColor" class="bi bi-arrow-left-right" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M1 11.5a.5.5 0 0 0 .5.5h11.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5m14-7a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5"/>
+          </svg>
+          Transferência
+        </a>
+      </nav>
+    </div>
+
+     <!-- Tag <iframe>, elemento de quadro embutido que incorpora outra pagina HTML dentro da pagina atual -->
+    <div class="col-md-10 col-sm-12">
+      <iframe src="/PgHome" frameborder="0" name="tela" id="tela"></iframe>
+    </div>
+  </div>
+  <!-- Seção que utiliza uma lista ordenada <ul> que permite a navegação semelhante a tabs, também a tag<p> paragrafo para mostrar um texto, seguindo de imagens <img>-->
+  <div style="background-color: #daebed;">
+    <div class="container">
+      <div class="row ">
+        <div class="col-12 text-center my-5">
+          <h1> História </h1>
+          <p> Bem vindos ao gerenciamento e controle do seu automóvel</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <ul class="nav nav-pills justify-content-center mb-5" id="pills-nav" role="tablist">
+            <li class="nav-item mr-3">
+              <a class="nav-link active" id="nav-01" href="#nav-item-01" data-toggle="pill">Historia</a>
+            </li>
+            <li class="nav-item mr-3">
+              <a class="nav-link" id="nav-02" href="#nav-item-02" data-toggle="pill">Manutenção</a>
+            </li>
+            <li class="nav-item mr-3">
+              <a class="nav-link" id="nav-03" href="#nav-item-03" data-toggle="pill">Segurança</a>
+            </li>
+          </ul>
+
+          <div class="tab-content" id="nav-pills-content">
+            <div class="tab-pane fade show active" id="nav-item-01" role="tabpanel">
+              <div class="row">
+                <div class="col-sm-6 mb-2">
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <img src="./img/Img_01.jpg" class="d-block w-100" alt="...">
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <h5>Bem vindo ao AutoGESTOR</h5>
+                  <hr>
+                  <p>Mantenha seu carro sempre em dia com o AutoGestor, o aplicativo completo para gerenciar todas as necessidades do seu automóvel.</p>
+                  <p> Com o AutoGestor, você pode:</p>
+
+                  <ul>
+                    <li><strong>Monitorar Manutenções:</strong> Receba lembretes para trocas de óleo, revisões
+                      periódicas e outras manutenções essenciais.</li>
+                    <li><strong>Gerenciar Documentação:</strong> Armazene e acesse facilmente documentos importantes como seguro, licenciamento e multas.</li>
+                    <li><strong>Acompanhar Despesas:</strong> Controle seus gastos com combustível, manutenção e outros custos relacionados ao veículo. </li>
+                    <li><strong>Segurança em Primeiro Lugar:</strong> Receba alertas sobre recalls e dicas de segurança para manter seu carro e sua família protegidos.</li>
+                  </ul>
+
+                  <p>Simplifique a gestão do seu automóvel e tenha mais tranquilidade na estrada com o AutoGestor. Baixe agora e comece a cuidar do seu carro de forma inteligente!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Neste container utilizado para receber os contatos, abrimos um formulário <form> para capturar informações do usuario-->
+  <div class="container-fluid mt-4" id="contatos">
+    <div class="col-12 text-center my-5">
+      <h1 class="display-3">
+        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-envelope-fill" fill="currentColor"
+          xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 
+                4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 
+                9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z" />
+        </svg>
+        Contate-nos
+      </h1>
+    </div>
+    <div class="row justify-content-center mb-5 bg-light p-3">
+      <div class="col-sm-12 col-md-10 col-lg-8 ">
+        <form>
+          <div class="form-row">
+            <div class="row">
+              <div class="form-group col-sm-6 mb-3">
+                <label for="nome">Nome</label>
+                <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome">
+              </div>
+              <div class="form-group col-sm-6 mb-3">
+                <label for="nome">Assunto</label>
+                <input type="text" class="form-control" id="nome" name="nome" placeholder="Assunto">
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group col-sm-6 mb-3">
+                <label for="nome">Email</label>
+                <input type="text" class="form-control" id="nome" name="nome" placeholder="Email">
+              </div>
+              <div class="form-group col-sm-6 mb-3">
+                <label for="nome">Telefone</label>
+                <input type="text" class="form-control" id="nome" name="nome" placeholder="Telefone">
+              </div>
+            </div>
+            <div class="form-group col-sm-12 mb-3">
+              <label for="nome">Comentário</label>
+              <textarea type="text" class="form-control" id="nome" name="nome"></textarea>
+            </div>
+          </div>
+          <div class="form-row mt-4">
+            <div class="col-sm-12">
+              <button type="submit" class="btn btn-primary">
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-envelope-fill" fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 
+                      4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-
+                      6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z" />
+                </svg>
+                Enviar
+              </button>
+              <button data-trigger="focus" type="button" class="btn btn-secondary" data-toggle="popover" title="Ajuda"
+                data-content="Preencha os Campos abaixo e aguarde o retorno em seu email!">
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle-fill" fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412l-
+                    2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 
+                    1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM8 
+                    5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                </svg>
+                Ajuda
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+    <!-- seção que contém o rodape do site Tag<footer>, lista ordenada <ul> e finalizando com paragrafo <p> que recebe um icone através da tag <img> que direciona para o link destino. -->
+  <footer class="p-5" style="background-color: #01373b ;color: white">
+    <div class="row">
+
+      <div class="col-md-3 mb-3">
+        <ul class="nav flex-column">
+          <li class="nav-item pb-2">
+            <a class="link_nav active" aria-current="page" href="#inicio">Inicio</a>
+          </li>
+          <li class="nav-item pb-2">
+            <a class="link_nav" href="#sobre" style="color: white">Sobre</a>
+          </li>
+          <li class="nav-item pb-2">
+            <a class="link_nav" href="#contatos" style="color: white">Contatos</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-md-5 mb-3">
+        <p>Endereço:</p>
+        <p>Rua Rodrigo Medeiros, 121 - Jd Monte Alto - Campinas -SP</p>
+        <p> E-mail: automotive@gmail.com</p>
+      </div>
+      <div class="col-md-4">
+        <p>Redes Sociais:</p>
+        <p>
+          <img src="./img/face.png" width="=25">
+          <a class="link_nav active" aria-current="page" href="#inicio" title="Ir para Facebook">Facebook</a>
+        </p>
+        <p>
+          <img src="./img/instagram.png" width="=25px">
+          <a class="link_nav active" aria-current="page" href="#inicio" title="Ir para Instagram">Instagram</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
